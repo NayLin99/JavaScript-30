@@ -24,14 +24,14 @@
 
         recognition.addEventListener('result', e => {
             const transcript = Array.from(e.results)
-                .map(resutl => result[0])
+                .map(result => result[0])
                 .map(result => result.transcript)
                 .join('')
 
             p.textContent = transcript;
             if (e.results[0].isFinal) {
                 p = document.createElement('p');
-                word.appendChild(p);
+                words.appendChild(p);
             }
 
             console.log(transcript);
